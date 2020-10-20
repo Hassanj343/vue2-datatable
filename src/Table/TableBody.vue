@@ -38,7 +38,7 @@
       </template>
     </template>
     <tr v-else-if="!leftFixed && !rightFixed">
-      <td :colspan="colLen" class="text-center text-muted">
+      <td :colspan="colLen" class="text-center text-gray-700">
         ( {{ $i18nForDatatable('No Data') }} )
       </td>
     </tr>

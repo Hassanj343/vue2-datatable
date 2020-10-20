@@ -1,20 +1,20 @@
 <template>
-  <ul class="pagination" style="margin: 0" name="Pagination">
+  <ul class="flex list-reset pl-0 rounded" style="margin: 0" name="Pagination">
     <li v-if="!isFirstPage" class="page-item" @click="turnPage(-1)">
-      <a href="#" class="page-link" @click.prevent>
+      <a href="#" class="relative block py-2 px-3 -ml-px leading-normal text-blue bg-white border border-gray-200 no-underline hover:text-blue-800 hover:bg-gray-200" @click.prevent>
         <i class="fa fa-arrow-left"></i>
       </a>
     </li>
     <li v-for="i in dspBtns" :class="['page-item', { 'active': i === curPage }]">
-      <a v-if="i" href="#" class="page-link" @click.prevent="handleClick(i)">
+      <a v-if="i" href="#" class="relative block py-2 px-3 -ml-px leading-normal text-blue bg-white border border-gray-200 no-underline hover:text-blue-800 hover:bg-gray-200" @click.prevent="handleClick(i)">
         {{ i }}
       </a>
-      <a v-else class="page-link">
+      <a v-else class="relative block py-2 px-3 -ml-px leading-normal text-blue bg-white border border-gray-200 no-underline hover:text-blue-800 hover:bg-gray-200">
         <i class="fa fa-ellipsis-h"></i>
       </a>
     </li>
     <li v-if="!isLastPage" class="page-item" @click="turnPage(1)">
-      <a href="#" class="page-link" @click.prevent>
+      <a href="#" class="relative block py-2 px-3 -ml-px leading-normal text-blue bg-white border border-gray-200 no-underline hover:text-blue-800 hover:bg-gray-200" @click.prevent>
         <i class="fa fa-arrow-right"></i>
       </a>
     </li>

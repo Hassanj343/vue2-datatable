@@ -9,14 +9,14 @@
 
     <tbl v-bind="$props" />
     
-    <div v-if="Pagination" class="row" style="margin-top: 10px">
-      <div class="col-sm-6">
+    <div v-if="Pagination" class="flex flex-wrap " style="margin-top: 10px">
+      <div class="sm:w-1/2 pr-4 pl-4">
         <strong>
           {{ $i18nForDatatable('Total') }} {{ total }} {{ $i18nForDatatable(',') }}
         </strong>
         <page-size-select :query="query" :page-size-options="pageSizeOptions" />
       </div>
-      <div class="col-sm-6">
+      <div class="sm:w-1/2 pr-4 pl-4">
         <pagination class="pull-right" :total="total" :query="query" />
       </div>
     </div>

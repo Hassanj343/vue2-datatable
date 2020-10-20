@@ -1,10 +1,10 @@
 <template>
-  <div class="btn-group" name="HeaderSettings">
-    <button class="btn btn-default dropdown-toggle" ref="dropdownBtn" type="button">
-      <i class="fa" :class="[usingBak && 'text-info', processingCls || 'fa-cog']"></i>
+  <div class="relative inline-flex align-middle" name="HeaderSettings">
+    <button class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline btn-default  inline-block w-0 h-0 ml-1 align border-b-0 border-t-1 border-r-1 border-l-1" ref="dropdownBtn" type="button">
+      <i class="fa" :class="[usingBak && 'text-teal-500', processingCls || 'fa-cog']"></i>
       <span class="caret"></span>
     </button>
-    <div class="dropdown-menu clearfix" :style="drpMenuStyle">
+    <div class=" absolute left-0 z-50 float-left hidden list-reset	 py-2 mt-1 text-base bg-white border border-gray-300 rounded clearfix" :style="drpMenuStyle">
       <div class="-col-group-container">
         <column-group v-for="(columns, groupName) in colGroups"
           ref="colGroups" :key="groupName"
@@ -12,15 +12,15 @@
         </column-group>
       </div>
       <div class="clearfix" style="margin: 10px 0">
-        <div class="btn-group btn-group-sm pull-right">
-          <button class="btn btn-default" type="button" @click="apply()">
+        <div class="relative inline-flex align-middle py-1 px-2 leading-tight text-xs  pull-right">
+          <button class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline btn-default" type="button" @click="apply()">
             {{ $i18nForDatatable('Apply') }}
           </button>
           <template v-if="supportBackup">
-            <button data-toggle="dropdown" class="btn btn-default dropdown-toggle" type="button" style="box-shadow: none">
+            <button data-toggle="dropdown" class="inline-block align-middle text-center select-none border font-normal whitespace-no-wrap rounded py-1 px-3 leading-normal no-underline btn-default  inline-block w-0 h-0 ml-1 align border-b-0 border-t-1 border-r-1 border-l-1" type="button" style="box-shadow: none">
               <span class="caret"></span>
             </button>
-            <ul class="dropdown-menu">
+            <ul class=" absolute left-0 z-50 float-left hidden list-reset	 py-2 mt-1 text-base bg-white border border-gray-300 rounded">
               <li @click="apply(true)">
                 <a href="#" @click.prevent>
                   <i class="fa fa-floppy-o"></i>&nbsp;
@@ -29,7 +29,7 @@
               </li>
               <li v-if="usingBak" @click="rmBackup()">
                 <a href="#" @click.prevent>
-                  <i class="fa fa-trash-o text-danger"></i>&nbsp;
+                  <i class="fa fa-trash-o text-red-600"></i>&nbsp;
                   {{ $i18nForDatatable('Clear local settings backup and restore') }}
                 </a>
               </li>
@@ -37,7 +37,7 @@
           </template>
         </div>
       </div>
-      <small v-if="usingBak" class="pull-left text-muted" style="margin-top: -8px">
+      <small v-if="usingBak" class="pull-left text-gray-700" style="margin-top: -8px">
         ( {{ $i18nForDatatable('Using local settings') }} )
       </small>
     </div>
